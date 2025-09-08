@@ -1,6 +1,10 @@
-class A{
+class A extends Thread
+{
+    public void run(){
+        System.out.println("Hi");
+    }
     public static void main(String[] args) {
-        Thread t1=new Thread();
-        t1.start();
+        A a=new A();
+        a.start();
     }
 }
