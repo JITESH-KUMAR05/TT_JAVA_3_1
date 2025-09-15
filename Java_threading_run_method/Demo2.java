@@ -31,6 +31,11 @@ class B{
         // a2.start();
         // Thread.sleep(1000); // we are waiting unnecessary time so we will use join method
         // a1.join(); // this is also enfficient so we will use wait,notify,notify all
+        // if i keep here wait for main thread then it will go to sleep state 
+        //  in the mean time the new thread is going to calculate the value and send the notification too
+        // to the waiting threads in this case there are no threads in waiting 
+        // after this the thread go to waiting state and it will never receive the notification
+        // so the program execution will stop fore ever
         synchronized(a1){
             a1.wait();
 
