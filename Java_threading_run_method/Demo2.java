@@ -6,6 +6,13 @@ class A extends Thread
         for(int i=0;i<10000;i++){
             this.total = this.total + i;
         }
+        /*
+         * for example if we have 1 cr statements after this 
+         * for loop then the main thread will wait for 
+         * long time unnecessaryly as we already got 
+         * the total value 
+         * so now we will use wait, notify, notify all;
+         */
     }
 }
 
@@ -17,7 +24,8 @@ class B{
         a1.start();
         // a2.start();
         // Thread.sleep(1000); // we are waiting unnecessary time so we will use join method
-        a1.join();
+        // a1.join(); // this is also enfficient so we will use wait,notify,notify all
+        
         System.out.println(a1.total);
     }
 }
