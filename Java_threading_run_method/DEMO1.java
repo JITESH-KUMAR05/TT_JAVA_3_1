@@ -1,4 +1,7 @@
-
+/*
+ * Synchronized method accepts only one thread from one object at a time 
+ * it will not accept more than one at a time from a single object  
+ */
 class A{
     synchronized void m1(){
         for(int i=0;i<5;i++){
